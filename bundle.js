@@ -1224,7 +1224,7 @@ async function addMinter(){
 }
 
 async function mintTokens(){
-    AcademyCoinContract.methods.mint(account, 10000).send({from: account})
+    AcademyCoinContract.methods.mint(account, 1000000000000000000).send({from: account})
 }
 
 async function init(){
