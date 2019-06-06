@@ -21,16 +21,6 @@ async function init(){
         defaultGasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
     })
     
-    let url_string = window.location.href
-    let url = new URL(url_string);
-    let action = url.searchParams.get("action");
-
-    if(action === "addMinter"){
-        document.getElementById("mintTokens").style.display = "none"
-    } else {
-        document.getElementById("becomeMinter").style.display = "none"
-    }
-
     document.getElementById("becomeMinter").onclick = addMinter
     document.getElementById("mintTokens").onclick = mintTokens
 }
