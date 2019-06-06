@@ -24,10 +24,8 @@ async function init(){
     let url_string = window.location.href
     let url = new URL(url_string);
     let action = url.searchParams.get("action");
-    console.log(action);
 
     if(action === "addMinter"){
-        console.log("add minter detected")
         document.getElementById("mintTokens").style.display = "none"
     } else {
         document.getElementById("becomeMinter").style.display = "none"
