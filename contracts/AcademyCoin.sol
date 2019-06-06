@@ -11,8 +11,5 @@ contract AcademyCoin is ERC20, ERC20Detailed, ERC20Mintable {
         ERC20Detailed(name, symbol, decimals)
         ERC20()
         public
-    {
-
-    }
-
+    {}
 }
