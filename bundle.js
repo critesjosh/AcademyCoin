@@ -1234,7 +1234,19 @@ async function init(){
     AcademyCoinContract = new web3.eth.Contract(AcademyCoinJSON.abi, '0x61f0e026e2aa59c16f97920361a095b4f3af5b85', {
         defaultAccount: account, // default from address
         defaultGasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
-    })   
+    })
+    
+    let url_string = window.location.href
+    let url = new URL(url_string);
+    let action = url.searchParams.get("action");
+    console.log(action);
+
+    if(action === "addMinter"){
+        console.log("add minter detected")
+        document.getElementById("mintTokens").style.display = "none"
+    } else {
+        document.getElementById("becomeMinter").style.display = "none"
+    }
 
     document.getElementById("becomeMinter").onclick = addMinter
     document.getElementById("mintTokens").onclick = mintTokens
