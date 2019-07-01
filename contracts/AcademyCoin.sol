@@ -6,6 +6,7 @@ import './ERC20Mintable.sol';
 
 contract AcademyCoin is ERC20, ERC20Detailed, ERC20Mintable {
 
+
     constructor(string memory name, string memory symbol, uint8 decimals)
         ERC20Mintable()
         ERC20Detailed(name, symbol, decimals)
