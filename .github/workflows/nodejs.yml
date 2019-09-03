@@ -1,25 +1,8 @@
-name: Node CI
-
-on: [commit]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: '10.x'
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm install truffle ganache-cli
-        truffle test
-      env:
-        CI: true
+steps:
+- uses: actions/checkout@master
+- uses: actions/setup-node@v1
+  with:
+    node-version: '10.x'
+- run: npm install truffle ganache-cli
+- run: ganache-cli
+- run: truffle test
