@@ -11,4 +11,4 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: sudo npm install -g truffle ganache-cli
-      - run: ganache-cli & truffle test
+      - run: sudo ganache-cli & truffle test
