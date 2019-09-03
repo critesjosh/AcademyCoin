@@ -1,3 +1,5 @@
+name: Greeting from testland
+on: push
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -5,7 +7,6 @@ jobs:
       matrix:
         node: [ '10', '8' ]
     name: Node ${{ matrix.node }} sample
-    on: push
     steps:
       - uses: actions/checkout@master
       - name: Setup node
