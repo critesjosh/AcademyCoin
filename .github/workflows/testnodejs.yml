@@ -10,6 +10,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install -g truffle ganache-cli
+      - run: sudo npm install -g truffle ganache-cli
       - run: ganache-cli
       - run: truffle test
