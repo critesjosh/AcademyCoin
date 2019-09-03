@@ -1,18 +1,15 @@
 name: Greeting from testland
 on: push
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        node: [ '10', '8' ]
-    name: Node ${{ matrix.node }} sample
+    name: Truffle testing trial
     steps:
       - uses: actions/checkout@master
       - name: Setup node
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install truffle ganache-cli
+      - run: npm install -g truffle ganache-cli
       - run: ganache-cli
       - run: truffle test
