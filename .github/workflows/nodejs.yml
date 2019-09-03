@@ -1,8 +1,8 @@
 - name: Setup Node.js for use with actions
   uses: actions/setup-node@v1.1.0
-  on: commit
   with:
     node-version: '10.x'
+- on: push 
 - run: npm install truffle ganache-cli
 - run: ganache-cli
 - run: truffle test
